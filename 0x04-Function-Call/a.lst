@@ -1,0 +1,125 @@
+
+0x04-Function-Call/a.bin:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000001000 <_init>:
+    1000:	sub    rsp,0x8
+    1004:	mov    rax,QWORD PTR [rip+0x2fc5]        # 3fd0 <__gmon_start__>
+    100b:	test   rax,rax
+    100e:	je     1012 <_init+0x12>
+    1010:	call   rax
+    1012:	add    rsp,0x8
+    1016:	ret
+
+Disassembly of section .plt:
+
+0000000000001020 <printf@plt-0x10>:
+    1020:	push   QWORD PTR [rip+0x2fca]        # 3ff0 <_GLOBAL_OFFSET_TABLE_+0x8>
+    1026:	jmp    QWORD PTR [rip+0x2fcc]        # 3ff8 <_GLOBAL_OFFSET_TABLE_+0x10>
+    102c:	nop    DWORD PTR [rax+0x0]
+
+0000000000001030 <printf@plt>:
+    1030:	jmp    QWORD PTR [rip+0x2fca]        # 4000 <printf@GLIBC_2.2.5>
+    1036:	push   0x0
+    103b:	jmp    1020 <_init+0x20>
+
+Disassembly of section .plt.got:
+
+0000000000001040 <__cxa_finalize@plt>:
+    1040:	jmp    QWORD PTR [rip+0x2f9a]        # 3fe0 <__cxa_finalize@GLIBC_2.2.5>
+    1046:	xchg   ax,ax
+
+Disassembly of section .text:
+
+0000000000001050 <_start>:
+    1050:	xor    ebp,ebp
+    1052:	mov    r9,rdx
+    1055:	pop    rsi
+    1056:	mov    rdx,rsp
+    1059:	and    rsp,0xfffffffffffffff0
+    105d:	push   rax
+    105e:	push   rsp
+    105f:	xor    r8d,r8d
+    1062:	xor    ecx,ecx
+    1064:	lea    rdi,[rip+0xce]        # 1139 <main>
+    106b:	call   QWORD PTR [rip+0x2f4f]        # 3fc0 <__libc_start_main@GLIBC_2.34>
+    1071:	hlt
+    1072:	cs nop WORD PTR [rax+rax*1+0x0]
+    107c:	nop    DWORD PTR [rax+0x0]
+
+0000000000001080 <deregister_tm_clones>:
+    1080:	lea    rdi,[rip+0x2f91]        # 4018 <__TMC_END__>
+    1087:	lea    rax,[rip+0x2f8a]        # 4018 <__TMC_END__>
+    108e:	cmp    rax,rdi
+    1091:	je     10a8 <deregister_tm_clones+0x28>
+    1093:	mov    rax,QWORD PTR [rip+0x2f2e]        # 3fc8 <_ITM_deregisterTMCloneTable>
+    109a:	test   rax,rax
+    109d:	je     10a8 <deregister_tm_clones+0x28>
+    109f:	jmp    rax
+    10a1:	nop    DWORD PTR [rax+0x0]
+    10a8:	ret
+    10a9:	nop    DWORD PTR [rax+0x0]
+
+00000000000010b0 <register_tm_clones>:
+    10b0:	lea    rdi,[rip+0x2f61]        # 4018 <__TMC_END__>
+    10b7:	lea    rsi,[rip+0x2f5a]        # 4018 <__TMC_END__>
+    10be:	sub    rsi,rdi
+    10c1:	mov    rax,rsi
+    10c4:	shr    rsi,0x3f
+    10c8:	sar    rax,0x3
+    10cc:	add    rsi,rax
+    10cf:	sar    rsi,1
+    10d2:	je     10e8 <register_tm_clones+0x38>
+    10d4:	mov    rax,QWORD PTR [rip+0x2efd]        # 3fd8 <_ITM_registerTMCloneTable>
+    10db:	test   rax,rax
+    10de:	je     10e8 <register_tm_clones+0x38>
+    10e0:	jmp    rax
+    10e2:	nop    WORD PTR [rax+rax*1+0x0]
+    10e8:	ret
+    10e9:	nop    DWORD PTR [rax+0x0]
+
+00000000000010f0 <__do_global_dtors_aux>:
+    10f0:	endbr64
+    10f4:	cmp    BYTE PTR [rip+0x2f1d],0x0        # 4018 <__TMC_END__>
+    10fb:	jne    1128 <__do_global_dtors_aux+0x38>
+    10fd:	push   rbp
+    10fe:	cmp    QWORD PTR [rip+0x2eda],0x0        # 3fe0 <__cxa_finalize@GLIBC_2.2.5>
+    1106:	mov    rbp,rsp
+    1109:	je     1117 <__do_global_dtors_aux+0x27>
+    110b:	mov    rdi,QWORD PTR [rip+0x2efe]        # 4010 <__dso_handle>
+    1112:	call   1040 <__cxa_finalize@plt>
+    1117:	call   1080 <deregister_tm_clones>
+    111c:	mov    BYTE PTR [rip+0x2ef5],0x1        # 4018 <__TMC_END__>
+    1123:	pop    rbp
+    1124:	ret
+    1125:	nop    DWORD PTR [rax]
+    1128:	ret
+    1129:	nop    DWORD PTR [rax+0x0]
+
+0000000000001130 <frame_dummy>:
+    1130:	endbr64
+    1134:	jmp    10b0 <register_tm_clones>
+
+0000000000001139 <main>:
+    1139:	push   rbp
+    113a:	mov    rbp,rsp
+    113d:	sub    rsp,0x10
+    1141:	mov    DWORD PTR [rbp-0x4],0x539
+    1148:	mov    eax,DWORD PTR [rbp-0x4]
+    114b:	lea    rdx,[rip+0xeb2]        # 2004 <_IO_stdin_used+0x4>
+    1152:	mov    esi,eax
+    1154:	mov    rdi,rdx
+    1157:	mov    eax,0x0
+    115c:	call   1030 <printf@plt>
+    1161:	mov    eax,0x0
+    1166:	leave
+    1167:	ret
+
+Disassembly of section .fini:
+
+0000000000001168 <_fini>:
+    1168:	sub    rsp,0x8
+    116c:	add    rsp,0x8
+    1170:	ret
