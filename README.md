@@ -22,7 +22,7 @@ In each section, we work through several short disassembly snippets. As a partic
 
 ## Getting Started
 
-Directories 0x00 through 0x08 contain the source code and serve as the _answers to the exercises_. **I highly recommend that you only look at the contents inside `human-decompiler-dist.zip` from the [release page](/releases) and practice reverse engineering on your own before taking a peek at the answers.** You can then use the answers to check your work later.
+Directories 0x00 through 0x08 contain the source code and serve as the _answers to the exercises_. **I highly recommend that you only look at the contents inside `human-decompiler-dist.zip` from the [release page](https://github.com/CX330Blake/human-decompiler/releases) and practice reverse engineering on your own before taking a peek at the answers.** You can then use the answers to check your work later.
 
 If you want to compile the code on your own machine, simply run:
 
