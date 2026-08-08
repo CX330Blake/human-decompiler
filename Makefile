@@ -1,5 +1,5 @@
 CC := gcc
-CFLAGS ?= -Wall -Wextra
+CFLAGS ?= -Wall -Wextra -O0
 
 SOURCES := $(patsubst ./%,%,$(shell find . -type f -name '*.c'))
 BINARIES := $(SOURCES:.c=.bin)

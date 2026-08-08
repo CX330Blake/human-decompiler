@@ -103,18 +103,17 @@ Disassembly of section .text:
     112d:	mov    WORD PTR [rbp-0x2],0x1
     1133:	movsx  eax,WORD PTR [rbp-0x2]
     1137:	mov    DWORD PTR [rbp-0x8],eax
-    113a:	mov    WORD PTR [rbp-0xa],0x1
-    1140:	cmp    WORD PTR [rbp-0x2],0x64
-    1145:	jle    114e <main+0x25>
-    1147:	mov    eax,0x0
-    114c:	jmp    1153 <main+0x2a>
-    114e:	mov    eax,0x0
-    1153:	pop    rbp
-    1154:	ret
+    113a:	cmp    WORD PTR [rbp-0x2],0x64
+    113f:	jle    1148 <main+0x1f>
+    1141:	mov    eax,0x0
+    1146:	jmp    114d <main+0x24>
+    1148:	mov    eax,0x0
+    114d:	pop    rbp
+    114e:	ret
 
 Disassembly of section .fini:
 
-0000000000001158 <_fini>:
-    1158:	sub    rsp,0x8
-    115c:	add    rsp,0x8
-    1160:	ret
+0000000000001150 <_fini>:
+    1150:	sub    rsp,0x8
+    1154:	add    rsp,0x8
+    1158:	ret
