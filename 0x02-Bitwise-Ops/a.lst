@@ -1,5 +1,5 @@
 
-0x02-Control-Flow/a.bin:     file format elf64-x86-64
+0x02-Bitwise-Ops/a.bin:     file format elf64-x86-64
 
 
 Disassembly of section .init:
@@ -100,20 +100,17 @@ Disassembly of section .text:
 0000000000001129 <main>:
     1129:	push   rbp
     112a:	mov    rbp,rsp
-    112d:	mov    DWORD PTR [rbp-0x4],0xa
-    1134:	cmp    DWORD PTR [rbp-0x4],0x63
-    1138:	jg     1147 <main+0x1e>
-    113a:	cmp    DWORD PTR [rbp-0x4],0x32
-    113e:	jle    1147 <main+0x1e>
-    1140:	mov    eax,0x1
-    1145:	jmp    114c <main+0x23>
-    1147:	mov    eax,0x0
-    114c:	pop    rbp
-    114d:	ret
+    112d:	mov    DWORD PTR [rbp-0x4],0x539
+    1134:	mov    eax,DWORD PTR [rbp-0x4]
+    1137:	and    eax,0xdead
+    113c:	mov    DWORD PTR [rbp-0x8],eax
+    113f:	mov    eax,0x0
+    1144:	pop    rbp
+    1145:	ret
 
 Disassembly of section .fini:
 
-0000000000001150 <_fini>:
-    1150:	sub    rsp,0x8
-    1154:	add    rsp,0x8
-    1158:	ret
+0000000000001148 <_fini>:
+    1148:	sub    rsp,0x8
+    114c:	add    rsp,0x8
+    1150:	ret

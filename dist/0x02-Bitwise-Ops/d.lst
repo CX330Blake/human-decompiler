@@ -1,5 +1,5 @@
 
-0x03-Bitwise-Ops/d.bin:     file format elf64-x86-64
+0x02-Bitwise-Ops/d.bin:     file format elf64-x86-64
 
 
 Disassembly of section .init:

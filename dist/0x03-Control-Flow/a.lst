@@ -1,5 +1,5 @@
 
-0x02-Control-Flow/c.bin:     file format elf64-x86-64
+0x03-Control-Flow/a.bin:     file format elf64-x86-64
 
 
 Disassembly of section .init:
@@ -100,31 +100,20 @@ Disassembly of section .text:
 0000000000001129 <main>:
     1129:	push   rbp
     112a:	mov    rbp,rsp
-    112d:	mov    DWORD PTR [rbp-0x4],0x1
-    1134:	cmp    DWORD PTR [rbp-0x4],0x3
-    1138:	je     115a <main+0x31>
-    113a:	cmp    DWORD PTR [rbp-0x4],0x3
-    113e:	jg     1160 <main+0x37>
-    1140:	cmp    DWORD PTR [rbp-0x4],0x1
-    1144:	je     114e <main+0x25>
-    1146:	cmp    DWORD PTR [rbp-0x4],0x2
-    114a:	je     1154 <main+0x2b>
-    114c:	jmp    1160 <main+0x37>
-    114e:	mov    BYTE PTR [rbp-0x5],0x41
-    1152:	jmp    1165 <main+0x3c>
-    1154:	mov    BYTE PTR [rbp-0x5],0x42
-    1158:	jmp    1165 <main+0x3c>
-    115a:	mov    BYTE PTR [rbp-0x5],0x43
-    115e:	jmp    1165 <main+0x3c>
-    1160:	mov    BYTE PTR [rbp-0x5],0x44
-    1164:	nop
-    1165:	mov    eax,0x0
-    116a:	pop    rbp
-    116b:	ret
+    112d:	mov    DWORD PTR [rbp-0x4],0xa
+    1134:	cmp    DWORD PTR [rbp-0x4],0x63
+    1138:	jg     1147 <main+0x1e>
+    113a:	cmp    DWORD PTR [rbp-0x4],0x32
+    113e:	jle    1147 <main+0x1e>
+    1140:	mov    eax,0x1
+    1145:	jmp    114c <main+0x23>
+    1147:	mov    eax,0x0
+    114c:	pop    rbp
+    114d:	ret
 
 Disassembly of section .fini:
 
-000000000000116c <_fini>:
-    116c:	sub    rsp,0x8
-    1170:	add    rsp,0x8
-    1174:	ret
+0000000000001150 <_fini>:
+    1150:	sub    rsp,0x8
+    1154:	add    rsp,0x8
+    1158:	ret

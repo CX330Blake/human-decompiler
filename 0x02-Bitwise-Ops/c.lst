@@ -1,5 +1,5 @@
 
-0x03-Bitwise-Ops/e.bin:     file format elf64-x86-64
+0x02-Bitwise-Ops/c.bin:     file format elf64-x86-64
 
 
 Disassembly of section .init:
@@ -102,11 +102,11 @@ Disassembly of section .text:
     112a:	mov    rbp,rsp
     112d:	mov    DWORD PTR [rbp-0x4],0x539
     1134:	mov    eax,DWORD PTR [rbp-0x4]
-    1137:	sar    eax,0x2
-    113a:	mov    DWORD PTR [rbp-0x8],eax
-    113d:	mov    eax,0x0
-    1142:	pop    rbp
-    1143:	ret
+    1137:	xor    al,0xff
+    1139:	mov    DWORD PTR [rbp-0x8],eax
+    113c:	mov    eax,0x0
+    1141:	pop    rbp
+    1142:	ret
 
 Disassembly of section .fini:
 
