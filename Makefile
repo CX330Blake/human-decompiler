@@ -5,11 +5,14 @@ SOURCES := $(patsubst ./%,%,$(shell find . -type f -name '*.c'))
 BINARIES := $(SOURCES:.c=.bin)
 SOURCE_LISTINGS := $(SOURCES:.c=.lst)
 DIST_LISTINGS := $(patsubst %.c,dist/%.lst,$(SOURCES))
-LISTINGS := $(SOURCE_LISTINGS) $(DIST_LISTINGS)
 
-.PHONY: all clean
+.PHONY: all dist clean
 
-all: $(BINARIES) $(LISTINGS)
+all: $(BINARIES) $(SOURCE_LISTINGS) dist
+
+dist: $(BINARIES)
+	$(RM) -r dist
+	$(MAKE) $(DIST_LISTINGS)
 
 %.bin: %.c
 	$(CC) $(CFLAGS) $< -o $@
@@ -24,4 +27,5 @@ dist/%.lst: %.bin
 	objdump -d -M intel --no-show-raw-insn $< > $@
 
 clean:
-	$(RM) $(BINARIES) $(LISTINGS)
+	$(RM) $(BINARIES) $(SOURCE_LISTINGS)
+	$(RM) -r dist
