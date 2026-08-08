@@ -4,6 +4,7 @@ CFLAGS ?= -Wall -Wextra
 SOURCES := $(patsubst ./%,%,$(shell find . -type f -name '*.c'))
 BINARIES := $(SOURCES:.c=.bin)
 SOURCE_LISTINGS := $(SOURCES:.c=.lst)
+DIST_BINARIES := $(patsubst %.c,dist/%.bin,$(SOURCES))
 DIST_LISTINGS := $(patsubst %.c,dist/%.lst,$(SOURCES))
 
 .PHONY: all dist clean
@@ -12,7 +13,7 @@ all: $(BINARIES) $(SOURCE_LISTINGS) dist
 
 dist: $(BINARIES)
 	$(RM) -r dist
-	$(MAKE) $(DIST_LISTINGS)
+	$(MAKE) $(DIST_BINARIES) $(DIST_LISTINGS)
 
 %.bin: %.c
 	$(CC) $(CFLAGS) $< -o $@
@@ -20,6 +21,10 @@ dist: $(BINARIES)
 %.lst: %.bin
 	# objdump -d -M intel --no-show-raw-insn $< | pygmentize -l objdump -f terminal256 > $@
 	objdump -d -M intel --no-show-raw-insn $< > $@
+
+dist/%.bin: %.bin
+	mkdir -p "$(@D)"
+	cp "$<" "$@"
 
 dist/%.lst: %.bin
 	mkdir -p "$(@D)"
