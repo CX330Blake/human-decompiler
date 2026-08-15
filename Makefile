@@ -20,7 +20,7 @@ dist: $(BINARIES)
 
 %.lst: %.bin
 	# objdump -d -M intel --no-show-raw-insn $< | pygmentize -l objdump -f terminal256 > $@
-	objdump -d -M intel --no-show-raw-insn $< > $@
+	objdump -d -s -M intel --no-show-raw-insn $< > $@
 
 dist/%.bin: %.bin
 	mkdir -p "$(@D)"
@@ -29,7 +29,7 @@ dist/%.bin: %.bin
 dist/%.lst: %.bin
 	mkdir -p "$(@D)"
 	# objdump -d -M intel --no-show-raw-insn $< | pygmentize -l objdump -f terminal256 > $@
-	objdump -d -M intel --no-show-raw-insn $< > $@
+	objdump -d -s -M intel --no-show-raw-insn $< > $@
 
 clean:
 	$(RM) $(BINARIES) $(SOURCE_LISTINGS)

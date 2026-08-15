@@ -10,8 +10,8 @@ The course progresses from basic concepts to more advanced topics and covers the
 
 - 0x00-Variables
 - 0x01-Arithmetic-Ops
-- 0x02-Control-Flow
-- 0x03-Bitwise-Ops
+- 0x02-Bitwise-Ops
+- 0x03-Control-Flow
 - 0x04-Function-Call
 - 0x05-Type-Conversion
 - 0x06-Various-Data-Type
